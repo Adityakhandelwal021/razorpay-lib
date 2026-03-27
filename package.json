@@ -1,0 +1,15 @@
+{
+  "name": "razorpay-lib",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/razorpay-lib/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/libs/razorpay-lib"],
+      "options": {
+        "project": "libs/razorpay-lib/ng-package.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.lib.json",
+  "compilerOptions": {
+    "declarationMap": false,
+    "ignoreDeprecations": "6.0"
+  },
+  "angularCompilerOptions": {
+    "compilationMode": "partial"
+  }
+}
