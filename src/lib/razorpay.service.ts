@@ -47,8 +47,14 @@ export class RazorpayService {
 
   openCheckout(order: RazorpayOrder, request: PaymentOrderRequest): Observable<PaymentVerifyRequest> {
     return new Observable(observer => {
+      const key = this.config.keyId ?? order.keyId;
+      if (!key) {
+        observer.error(new Error('Razorpay keyId is missing (set RazorpayConfig.keyId or return it from create-order).'));
+        return;
+      }
+
       const options = {
-        key: order.keyId,
+        key,
         amount: order.amount,
         currency: order.currency,
         order_id: order.razorpayOrderId,

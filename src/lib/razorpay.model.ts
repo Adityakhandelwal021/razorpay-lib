@@ -12,7 +12,7 @@ export interface RazorpayOrder {
   razorpayOrderId: string;
   amount: number;
   currency: string;
-  keyId: string;
+  keyId?: string;
 }
 
 export interface PaymentVerifyRequest {
@@ -31,6 +31,7 @@ export interface PaymentResult {
 export interface RazorpayConfig {
   apiUrl: string;
   companyName: string;
+  keyId?: string;
   companyLogo?: string;
   themeColor?: string;
 }
